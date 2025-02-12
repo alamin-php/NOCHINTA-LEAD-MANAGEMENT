@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+:root {
+  --custom-primary: #0B4F59;
+  --custom-secondary: #E8F8FB;
+  --custom-gray: #667085;
+}
+
+/* Override Bootstrap button colors */
+.btn-primary {
+  background-color: var(--custom-primary) !important;
+  border-color: var(--custom-primary) !important;
+  color: white !important;
+}
+.btn-primary:hover {
+  background-color: #083d45 !important;
+  border-color: #083d45 !important;
+}
+
+.btn-secondary {
+  background-color: var(--custom-secondary) !important;
+  border-color: var(--custom-secondary) !important;
+  color: var(--custom-primary) !important;
+}
+
+.btn-secondary:hover {
+  background-color: #d0eef5 !important;
+  border-color: #d0eef5 !important;
+}
+
+.btn-gray {
+  background-color: var(--custom-gray) !important;
+  border-color: var(--custom-gray) !important;
+  color: white !important;
+}
+
+.btn-gray:hover {
+  background-color: #525b6b !important;
+  border-color: #525b6b !important;
+}
+
+
+/* Primary text color */
+.text-primary {
+  color: var(--custom-primary) !important;
+}
+
+/* Secondary text color */
+.text-secondary {
+  color: var(--custom-secondary) !important;
+}
+
+/* Gray text color */
+.text-gray {
+  color: var(--custom-gray) !important;
+}
+
+/* Custom hover effects */
+.text-primary:hover {
+  color: #083d45 !important; /* Darker shade on hover */
+}
+
+.text-secondary:hover {
+  color: #c8e2eb !important; /* Slightly darker shade on hover */
+}
+
+.text-gray:hover {
+  color: #525b6b !important;
+}
+
+
+body {
+  font-family: "Inter", sans-serif; /* Apply globally to the body */
+}
+
+.custom-select-width {
+  width: auto; /* Use only the necessary width */
+}
+
+.nav-item span {
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.nav-item .active {
+  border-bottom: 2px solid #0B4F59; /* Bootstrap primary color */
+  font-weight: normal;
+}
+

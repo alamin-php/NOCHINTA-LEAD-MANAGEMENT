@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <title>No Chinta Lead Management System</title>
+</head>
+
+<body>
+  <!-- start header section -->
+  <section class="container-fluid my-4">
+    <div class="p-3">
+      <div class="row">
+        <div class="col-md-9">
+          <h5 class="m-0">No Chinta lead manager</h5>
+        </div>
+        <div class="col-md-3">
+          <div class="d-flex flex-row justify-content-end gap-2">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <i class="fa-plus fa-square-arrow-up-right"></i>
+              Add New
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Add new lead</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- name and phone number  -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="leadName" class="form-label">Name</label>
+                  <input type="text" name="leadName" id="leadName" class="form-control" placeholder="Enter lead name" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="text" name="phone" id="phone" class="form-control" placeholder="Enter phone number" />
+                </div>
+              </div>
+            </div>
+            <!-- service required  and lead soruce-->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="seletServiceRequirment" class="form-label">Service Required</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Select Service required</option>
+                    <option value="service_one">Service Required One</option>
+                    <option value="service_two">Service Required One</option>
+                    <option value="service_three">
+                      Service Required One
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="seletLeadSource" class="form-label">Lead Source</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Select lead source</option>
+                    <option value="lead_source_one">Lead Source One</option>
+                    <option value="lead_source_two">Lead Source Two</option>
+                    <option value="lead_source_three">
+                      Lead Source Three
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- Lead type and area-->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="selectLeadType" class="form-label">Lead Type</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Select lead type</option>
+                    <option value="lead_type_one">Lead Type One</option>
+                    <option value="lead_type_two">Lead Type Two</option>
+                    <option value="lead_type_three">Lead Type Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="selectArea" class="form-label">Area</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Select area</option>
+                    <option value="area_one">Area One</option>
+                    <option value="area_two">Area Two</option>
+                    <option value="area_three">Area Three</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- Address type and Assing To-->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="address" class="form-label">Address</label>
+                  <input type="text" name="address" id="address" class="form-control" placeholder="Enter address" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="selectForAssing" class="form-label">Assing To</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Select employee id</option>
+                    <option value="employee_one">Employee One</option>
+                    <option value="employee_two">Employee Two</option>
+                    <option value="employee_three">Employee Three</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- Employee details area-->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="mb-3">
+                  <label for="employeeDetails" class="form-label">Details</label>
+                  <textarea rows="5" name="employeeDetails" id="employeeDetails" class="form-control"
+                    placeholder="Enter employee details"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer float-none">
+            <button type="button" class="btn btn-success">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end header section -->
+
+  <!-- start horizontal tabs section -->
+  <section class="container-fluid my-4">
+    <div class="p-3">
+      <div class="row">
+        <ul class="nav mb-3 d-flex justify-content-start border-bottom gap-3" id="pills-tab" role="tablist"
+          style="padding: 0;">
+          <li class="nav-item" role="presentation">
+            <span class="active" id="pills-overview-tab" data-bs-toggle="pill" data-bs-target="#pills-overview"
+              type="button" role="tab" aria-controls="pills-overview" aria-selected="true">Overview</span>
+          </li>
+          <li class="nav-item" role="presentation">
+            <span class="" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button"
+              role="tab" aria-controls="pills-profile" aria-selected="false">Lead List</span>
+          </li>
+          <li class="nav-item" role="presentation">
+            <span class="" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button"
+              role="tab" aria-controls="pills-contact" aria-selected="false">Team</span>
+          </li>
+          <li class="nav-item" role="presentation">
+            <span class="" id="pills-log-tab" data-bs-toggle="pill" data-bs-target="#pills-log" type="button" role="tab"
+              aria-controls="pills-log" aria-selected="false">Activity Log</span>
+          </li>
+        </ul>
+        <div class="tab-content p-3" id="pills-tabContent"> <!-- Apply padding only to content -->
+          <div class="tab-pane fade show active" id="pills-overview" role="tabpanel"
+            aria-labelledby="pills-overview-tab">
+            <div class="row">
+              <div class="col-md-9">
+                <h6 class="m-0">Overview</h6>
+              </div>
+              <div class="col-md-3">
+                <div class="d-flex flex-row justify-content-end gap-2">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="monthDropdown"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa fa-filter"></i> Filter
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="monthDropdown">
+                      <li><a class="dropdown-item" href="#">January</a></li>
+                      <li><a class="dropdown-item" href="#">February</a></li>
+                      <li><a class="dropdown-item" href="#">March</a></li>
+                      <li><a class="dropdown-item" href="#">April</a></li>
+                      <li><a class="dropdown-item" href="#">May</a></li>
+                      <li><a class="dropdown-item" href="#">June</a></li>
+                      <li><a class="dropdown-item" href="#">July</a></li>
+                      <li><a class="dropdown-item" href="#">August</a></li>
+                      <li><a class="dropdown-item" href="#">September</a></li>
+                      <li><a class="dropdown-item" href="#">October</a></li>
+                      <li><a class="dropdown-item" href="#">November</a></li>
+                      <li><a class="dropdown-item" href="#">December</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Lead List
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Team Lorem
+            ipsum dolor sit amet consectetur adipisicing elit.</div>
+          <div class="tab-pane fade" id="pills-log" role="tabpanel" aria-labelledby="pills-log-tab">Log Lorem ipsum
+            dolor sit amet consectetur adipisicing elit.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end horizontal tabs section -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
