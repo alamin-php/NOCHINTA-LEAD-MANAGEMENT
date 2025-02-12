@@ -5,6 +5,20 @@
   --custom-gray: #667085;
 }
 
+.card-icon {
+  width: 36px;
+  height: 36px;
+}
+.rounded-lg {
+  border-radius: 12px;
+}
+.lead-card {
+  width: 100%; 
+  max-height: 500px;
+}
+
+
+
 /* Override Bootstrap button colors */
 .btn-primary {
   background-color: var(--custom-primary) !important;
