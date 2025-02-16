@@ -36,8 +36,6 @@
   --bs-table-bg-state: #E8F8FB;
 }
 
-
-
 .table>:not(caption)>*>* {
   padding: 1rem;
   font-weight: 500;
