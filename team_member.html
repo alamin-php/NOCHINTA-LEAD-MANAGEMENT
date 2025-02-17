@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css" />
+  <title>No Chinta Lead Management System</title>
+</head>
+
+<body>
+  <!-- start header section -->
+  <section class="container-fluid my-3">
+    <div class="p-3">
+      <div class="row">
+        <div class="col-md-9">
+          <h5 class="m-0">No Chinta lead manager</h5>
+        </div>
+        <div class="col-md-3">
+          <div class="d-flex flex-row justify-content-end gap-2">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <i class="fa fa-plus"></i>
+              Add New
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Add new lead</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- name and phone number  -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="leadName" class="form-label">Name</label>
+                  <input type="text" name="leadName" id="leadName" class="form-control" placeholder="Enter lead name" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="text" name="phone" id="phone" class="form-control" placeholder="Enter phone number" />
+                </div>
+              </div>
+            </div>
+            <!-- service required  and lead soruce-->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="seletServiceRequirment" class="form-label">Service Required</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Select Service required</option>
+                    <option value="service_one">Service Required One</option>
+                    <option value="service_two">Service Required One</option>
+                    <option value="service_three">
+                      Service Required One
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="seletLeadSource" class="form-label">Lead Source</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Select lead source</option>
+                    <option value="lead_source_one">Lead Source One</option>
+                    <option value="lead_source_two">Lead Source Two</option>
+                    <option value="lead_source_three">
+                      Lead Source Three
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- Lead type and area-->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="selectLeadType" class="form-label">Lead Type</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Select lead type</option>
+                    <option value="lead_type_one">Lead Type One</option>
+                    <option value="lead_type_two">Lead Type Two</option>
+                    <option value="lead_type_three">Lead Type Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="selectArea" class="form-label">Area</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Select area</option>
+                    <option value="area_one">Area One</option>
+                    <option value="area_two">Area Two</option>
+                    <option value="area_three">Area Three</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- Address type and Assing To-->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="address" class="form-label">Address</label>
+                  <input type="text" name="address" id="address" class="form-control" placeholder="Enter address" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="selectForAssing" class="form-label">Assing To</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Select employee id</option>
+                    <option value="employee_one">Employee One</option>
+                    <option value="employee_two">Employee Two</option>
+                    <option value="employee_three">Employee Three</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- Employee details area-->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="mb-3">
+                  <label for="employeeDetails" class="form-label">Details</label>
+                  <textarea rows="5" name="employeeDetails" id="employeeDetails" class="form-control"
+                    placeholder="Enter employee details"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer float-none">
+            <button type="button" class="btn btn-success">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end header section -->
+
+  <!-- start horizontal tabs section -->
+
+  <section class="container-fluid horizontal-scrollable border-top">
+
+    <div class="p-3">
+      <div class="row flex-nowrap" id="sortable">
+        <div class="col py-3 rounded-3 me-2"  style="background-color: #E8F0F0 !important;">
+
+          <div class="card mb-3 border-0" style="background-color: #B8EAF2 !important;">
+            <div class="card-body d-flex justify-content-between">
+              <div>
+              <h5 class="card-title mb-2 ms-2">New Lead</h5>
+              <select class="form-select border-0 bg-transparent text-muted" aria-label="Default select example">
+                <option selected class="text-muted">Apply filter</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+              <h6> <span class="badge bg-white text-dark">100</span></h6>
+            </div>
+          </div>
+
+          <div>
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Abdul Kalam</h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">New lead</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Saima Akhter</h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01675432123</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">Apartment 12A, Lakeview, Gulshan-2, Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">On demand</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  20,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">10-25-2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Seeking nanny for two adorable twins</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">New lead</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Rahim Ali</h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01675432123</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">Villa 6, Dhanmondi, Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">On demand</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  20,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">10-25-2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Seeking nanny for two adorable twins</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">New lead</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+      </div>
+      
+
+        <div class="col py-3 rounded-3 me-2" style="background-color: #E8F0F0 !important;">
+          <div class="card mb-3 border-0" style="background-color: #B8EAF2 !important;">
+            <div class="card-body d-flex justify-content-between">
+              <div>
+              <h5 class="card-title mb-2 ms-2">Follow up 1</h5>
+              <select class="form-select border-0 bg-transparent text-muted" aria-label="Default select example">
+                <option selected class="text-muted">Apply filter</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+              <h6> <span class="badge bg-white text-dark">08</span></h6>
+            </div>
+          </div>
+
+          <div>
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Abdul Kalam <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FF0505;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 1</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Saima Akhter <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FCB711;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 1</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Emily Smith <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #1BBBD4;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 1</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+        </div>
+
+        <div class="col py-3 rounded-3 me-2" style="background-color: #E8F0F0 !important;">
+
+          <div>
+            <div class="card mb-3 border-0" style="background-color: #B8EAF2 !important;">
+              <div class="card-body d-flex justify-content-between">
+                <div>
+                <h5 class="card-title mb-2 ms-2">Follow up 2</h5>
+                <select class="form-select border-0 bg-transparent text-muted" aria-label="Default select example">
+                  <option selected class="text-muted">Apply filter</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+                <h6> <span class="badge bg-white text-dark">08</span></h6>
+              </div>
+            </div>
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Abdul Kalam <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FF0505;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 2</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Saima Akhter <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FCB711;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Canceled</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Emily Smith <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #1BBBD4;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Baby Sitter</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 1</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+        </div>
+
+        <div class="col py-3 rounded-3 me-2" style="background-color: #E8F0F0 !important;">
+
+          <div>
+            <div class="card mb-3 border-0" style="background-color: #B8EAF2 !important;">
+              <div class="card-body d-flex justify-content-between">
+                <div>
+                <h5 class="card-title mb-2 ms-2">Follow up 3</h5>
+                <select class="form-select border-0 bg-transparent text-muted" aria-label="Default select example">
+                  <option selected class="text-muted">Apply filter</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+                <h6> <span class="badge bg-white text-dark">64</span></h6>
+              </div>
+            </div>
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Abdul Kalam <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FF0505;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 2</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Saima Akhter <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FCB711;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Canceled</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Emily Smith <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #1BBBD4;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Baby Sitter</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 1</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+        </div>
+
+        <div class="col py-3 rounded-3 me-2" style="background-color: #E8F0F0 !important;">
+
+          <div>
+            <div class="card mb-3 border-0" style="background-color: #B8EAF2 !important;">
+              <div class="card-body d-flex justify-content-between">
+                <div>
+                <h5 class="card-title mb-2 ms-2">Follow up 4</h5>
+                <select class="form-select border-0 bg-transparent text-muted" aria-label="Default select example">
+                  <option selected class="text-muted">Apply filter</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+                <h6> <span class="badge bg-white text-dark">08</span></h6>
+              </div>
+            </div>
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Abdul Kalam <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FF0505;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 2</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Saima Akhter <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FCB711;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Canceled</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Emily Smith <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #1BBBD4;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Baby Sitter</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 1</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+        </div>
+
+        <div class="col py-3 rounded-3 me-2" style="background-color: #E8F0F0 !important;">
+
+          <div>
+            <div class="card mb-3 border-0" style="background-color: #B8EAF2 !important;">
+              <div class="card-body d-flex justify-content-between">
+                <div>
+                <h5 class="card-title mb-2 ms-2">Follow up 5</h5>
+                <select class="form-select border-0 bg-transparent text-muted" aria-label="Default select example">
+                  <option selected class="text-muted">Apply filter</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+                <h6> <span class="badge bg-white text-dark">08</span></h6>
+              </div>
+            </div>
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Abdul Kalam <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FF0505;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 2</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Saima Akhter <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FCB711;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Canceled</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Emily Smith <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #1BBBD4;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Baby Sitter</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 1</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+        </div>
+
+        <div class="col py-3 rounded-3 me-2" style="background-color: #E8F0F0 !important;">
+
+          <div>
+            <div class="card mb-3 border-0" style="background-color: #B8EAF2 !important;">
+              <div class="card-body d-flex justify-content-between">
+                <div>
+                <h5 class="card-title mb-2 ms-2">Follow up 6</h5>
+                <select class="form-select border-0 bg-transparent text-muted" aria-label="Default select example">
+                  <option selected class="text-muted">Apply filter</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+                <h6> <span class="badge bg-white text-dark">08</span></h6>
+              </div>
+            </div>
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Abdul Kalam <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FF0505;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 2</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Saima Akhter <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FCB711;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Canceled</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Emily Smith <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #1BBBD4;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Baby Sitter</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 1</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+        </div>
+
+        <div class="col py-3 rounded-3 me-2" style="background-color: #E8F0F0 !important;">
+
+          <div>
+            <div class="card mb-3 border-0" style="background-color: #B8EAF2 !important;">
+              <div class="card-body d-flex justify-content-between">
+                <div>
+                <h5 class="card-title mb-2 ms-2">Follow up 7</h5>
+                <select class="form-select border-0 bg-transparent text-muted" aria-label="Default select example">
+                  <option selected class="text-muted">Apply filter</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+                <h6> <span class="badge bg-white text-dark">08</span></h6>
+              </div>
+            </div>
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Abdul Kalam <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FF0505;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 2</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Saima Akhter <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #FCB711;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-info rounded-xl w-50 text-center p-1" style="background-color: #CBF2F8 !important;">Care giver</p>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Agreed Price :  25,000</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Canceled</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="card border-0">
+              <div class="card-body">
+                <div class="border-bottom pb-3">
+                  <h6 class="card-title mb-3">Emily Smith <i class="fa-solid fa-circle ps-2" style="font-size: 8px;color: #1BBBD4;"></i></h6>
+                  <div class="d-flex">
+                    <i class="fa fa-phone pt-1 pe-2"></i>
+                    <p class="card-title mb-2">01790404204</p>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-location-dot pt-1 pe-2"></i>
+                    <p class="card-title mb-3">House 74, Road-7, H-Block , Banani,Dhaka</p>
+                  </div>
+                  <p class="card-title bg-warning rounded-xl w-75 text-center p-1" style="background-color: #FFEEC7 !important;">Baby Sitter</p>
+                </div>
+              </div>
+                <div class="card-body pt-0">
+                  <div class="border-bottom">
+                    <div class="d-flex">
+                      <i class="fa-regular fa-calendar pt-1 pe-2"></i>
+                      <p class="card-title mb-2">07- 12 - 2024</p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-regular fa-clipboard pt-1 pe-2"></i>
+                      <p class="card-title mb-3">Looking for nani for a 5 years old baby boy</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2">
+                    <div class="d-flex">
+                      <p class="card-title pt-2">Status:</p>
+                      <select class="form-select border-0 fw-bold" aria-label="Default select example">
+                        <option selected class="fw-bold">Follow Up 1</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-content-center pt-2">
+                      <i class="fa-regular fa-comment-dots pt-1"></i>
+                      <h6 class="ms-2">3</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+        </div>
+
+        
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- end horizontal tabs section -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      $( "#sortable" ).sortable();
+    } );
+    </script>
+
+</body>
+
+</html>

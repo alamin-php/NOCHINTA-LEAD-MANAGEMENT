@@ -5,12 +5,20 @@
   --custom-gray: #667085;
 }
 
+.horizontal-scrollable {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 .card-icon {
   width: 36px;
   height: 36px;
 }
 .rounded-lg {
   border-radius: 12px;
+}
+.rounded-xl {
+  border-radius: 16px;
 }
 .lead-card {
   width: 100%; 
